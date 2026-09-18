@@ -1,0 +1,18 @@
+<Application x:Class="NativeCalendar.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+  <Application.Resources>
+    <SolidColorBrush x:Key="AccentBrush" Color="#E1D9C9" />
+    <SolidColorBrush x:Key="SurfaceBrush" Color="#AE9372" />
+    <SolidColorBrush x:Key="TextBrush" Color="#000000" />
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    <Style TargetType="Button">
+      <Setter Property="Background" Value="#212E40" />
+      <Setter Property="Foreground" Value="#ffffffff" />
+      <Setter Property="Padding" Value="12,7" />
+      <Setter Property="Margin" Value="2" />
+      <Setter Property="Cursor" Value="Hand" />
+    </Style>
+  </Application.Resources>
+</Application>
