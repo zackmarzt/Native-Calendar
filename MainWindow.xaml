@@ -9,7 +9,7 @@
   </Window.DataContext>
 
   <Window.Icon>
-    <BitmapImage UriSource="C:\Users\zack\Documents\Native-Calendar\icon.ico" />
+    <BitmapImage UriSource="icon.ico" />
   </Window.Icon>
   
   <Grid Margin="28">
@@ -40,13 +40,13 @@
           <ItemsPanelTemplate><UniformGrid Columns="7" /></ItemsPanelTemplate>
         </ItemsControl.ItemsPanel>
         <ItemsControl.Items>
-          <TextBlock Text="Dom" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="#AE9372" />
-          <TextBlock Text="Seg" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="#AE9372" />
-          <TextBlock Text="Ter" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="#AE9372" />
-          <TextBlock Text="Qua" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="#AE9372" />
-          <TextBlock Text="Qui" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="#AE9372" />
-          <TextBlock Text="Sex" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="#AE9372" />
-          <TextBlock Text="Sáb" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="#AE9372" />
+          <TextBlock Text="Sun" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="#AE9372" />
+          <TextBlock Text="Mon" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="#AE9372" />
+          <TextBlock Text="Tue" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="#AE9372" />
+          <TextBlock Text="Wed" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="#AE9372" />
+          <TextBlock Text="Thu" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="#AE9372" />
+          <TextBlock Text="Fri" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="#AE9372" />
+          <TextBlock Text="Sat" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="#AE9372" />
         </ItemsControl.Items>
       </ItemsControl>
 

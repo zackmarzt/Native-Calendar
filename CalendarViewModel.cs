@@ -13,7 +13,7 @@ public sealed class CalendarViewModel : INotifyPropertyChanged
     private DateTime _displayedMonth = new(DateTime.Today.Year, DateTime.Today.Month, 1);
     private DateTime _selectedDate = DateTime.Today;
     private string _newEventTitle = string.Empty;
-    private string _statusMessage = "Selecione um dia para criar um evento.";
+    private string _statusMessage = "Select an event day";
 
     public CalendarViewModel()
     {
@@ -27,8 +27,8 @@ public sealed class CalendarViewModel : INotifyPropertyChanged
         RefreshCalendar();
     }
 
-    public ObservableCollection<CalendarDay> Days { get; } = [];
-    public ObservableCollection<CalendarEvent> SelectedDayEvents { get; } = [];
+    public ObservableCollection<CalendarDay> Days { get; } = new System.Collections.ObjectModel.ObservableCollection<CalendarDay>();
+    public ObservableCollection<CalendarEvent> SelectedDayEvents { get; } = new System.Collections.ObjectModel.ObservableCollection<CalendarEvent>();
     public ICommand PreviousMonthCommand { get; }
     public ICommand NextMonthCommand { get; }
     public ICommand TodayCommand { get; }
@@ -67,7 +67,7 @@ public sealed class CalendarViewModel : INotifyPropertyChanged
         var title = NewEventTitle.Trim();
         if (title.Length == 0) return;
         _events.Add(new CalendarEvent(Guid.NewGuid(), title, _selectedDate));
-        Persist("Evento salvo localmente.");
+        Persist("Local save.");
         NewEventTitle = string.Empty;
         RefreshCalendar();
     }
@@ -76,14 +76,14 @@ public sealed class CalendarViewModel : INotifyPropertyChanged
     {
         if (item is null) return;
         _events.Remove(item);
-        Persist("Evento removido.");
+        Persist("Removed event");
         RefreshCalendar();
     }
 
     private void Persist(string successMessage)
     {
         try { _store.Save(_events); StatusMessage = successMessage; }
-        catch (IOException) { StatusMessage = "Não foi possível salvar os eventos localmente."; }
+        catch (IOException) { StatusMessage = "Unable to save events locally."; } // Error Status Message. To be implemented.
     }
 
     private void OnPropertyChanged([CallerMemberName] string? propertyName = null) => PropertyChanged?.Invoke(this, new(propertyName));
